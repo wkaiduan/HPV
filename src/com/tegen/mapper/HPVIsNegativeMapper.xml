@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC 
+"-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tegen.dao.HPVIsNegativeDao">
+	<select id="getInfo" resultType="com.tegen.entity.HPVIsNegative" parameterType="com.tegen.entity.HPVIsNegative">
+	select * from HPVIsNegative
+		<where>
+			<if test="totale!='' and totale!=null">
+				and totale like "%"#{totale}"%"
+			</if>
+			
+		</where>
+		order by ${pages.sort} ${pages.order}
+		limit #{pages.startindex},#{pages.rows}
+		  <!-- select top ${pagesize} * from HPVIsNegative where ID not in (select top ${start} ID from HPVIsNegative order by ID) and totale =${totale} order by ID  -->
+	</select>
+	<select id="getCount" resultType="java.lang.Integer">
+		select count(*) from HPVIsNegative
+	</select>
+</mapper>

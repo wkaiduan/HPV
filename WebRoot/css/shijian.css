@@ -1,0 +1,25 @@
+
+html, body {
+  background: #ffffff;
+}
+.wrap {
+  position: fixed;
+  top: 4%;
+  left: 85%;
+  height: 80px;
+  margin-top: -40px;
+  width: 1000px;
+  margin-left: -500px;
+}
+#clock {
+  text-align: center;
+  font-size: 50px;
+  color: #000000;
+  font-family: 'Faster One', cursive;
+}
+body {
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
